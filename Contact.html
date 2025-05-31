@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.0.0/mdb.min.css"
+  rel="stylesheet"
+/>
+    <style>
+        
+        * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 5%;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+}
+
+.contact-left h2 span {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #b40000;
+}
+
+.contact-left p {
+  font-size: 3.2rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.contact-right {
+    height: 50vh;
+  flex: 1;
+  background-color: #1c1c1c;
+  border-radius: 30px;
+  padding: 2rem;
+  min-width: 320px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ddd;
+  font-weight: bold;
+}
+
+.contact-form button {
+  background-size: cover;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  
+}
+
+.contact-form button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-left h2 span {
+    font-size: 2.4rem;
+  }
+
+  .contact-left p {
+    font-size: 1rem;
+  }
+}
+
+
+       .navbar {
+        height: 8vh;
+        width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: medium;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      min-width: 150px;
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #000;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        right: 30px;
+        top: 70px;
+        width: 200px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      }
+      .logo-container img {
+      height: 30px;
+      margin-right: 10px;
+    }
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+    </style>
+</head>
+<body>
+   <nav class="navbar">
+    <div class="logo-container">
+      <img src="https://sceniuz.com/static/media/Sceniuz_Logo.ba2730d7abcca86b0a864a7e876b1d36.svg" alt="Logo" />
+    
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="About.html">About Us</a>
+      <div class="dropdown">
+        <a href="#" id="dropbox">Services ▼</a>
+        <div class="dropdown-content" id="dropdownContent" style="display: none;">
+          <a href="Dataanalyst.html">Data Analytics</a>
+          <a href="DataEngineering.html">Data Engineering</a>
+          <a href="DataTransformation.html">Data transformation</a>
+        </div>
+      </div>
+      <a href="./Contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+    let x =document.getElementById("dropbox")
+    let dropdownContent =document.getElementById("dropdownContent")
+    x.addEventListener("mouseover",()=>{
+      dropdownContent.style.display = "block";
+    })
+    dropdownContent.addEventListener("mouseleave",()=>{
+      dropdownContent.style.display = "none";
+    })
+
+  </script>
+
+    <section class="contact-section">
+  <div class="contact-left">
+    <h2><span>Start Your Journey</span></h2>
+    <p>To revolutionize industries by transforming data into strategic assets that drive growth and innovation.</p>
+  </div>
+  <div class="contact-right">
+    <form class="contact-form">
+      <input type="email" placeholder="Email Id" required>
+      <input type="text" placeholder="Name" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+
+
+
+
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+ 
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+   
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+   
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+   
+  </section>
+  
+  <section class="">
+    <div class=" text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          
+            <img src="https://sceniuz.com/static/media/Sceniuz_Logo.ba2730d7abcca86b0a864a7e876b1d36.svg" alt="">
+         <div class="mapbox" style="height:10px;width:15px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d895.8497273798495!2d72.88018176954459!3d19.11063869888133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c99f13304e3b%3A0x5e4cc95214430cd!2sSceniuz%20-%20IT%20Division%20of%20Mahapatra%20Universal%20Limited!5e1!3m2!1sen!2sin!4v1748677341449!5m2!1sen!2sin" width="300" height="150" style="border:0; padding-top: 1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Services
+          </h6>
+          <p>
+            <a href="Dataanalyst.html" class="text-reset">Data Analytics</a>
+          </p>
+          <p>
+            <a href="DataEngineering.html" class="text-reset">Data Engineering</a>
+          </p>
+          <p>
+            <a href="DataTransformation.html" class="text-reset">Data Transformation</a>
+          </p>
+         
+        </div>
+       
+        <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4"> -->
+          <!-- Links -->
+          <!-- <h6 class="text-uppercase fw-bold mb-4">
+            
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div> -->
+       
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Mumbai, MH 400059, India</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            https://sceniuz.com/
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+       
+      </div>
+     
+    </div>
+  </section>
+ 
+ 
+ 
+</footer>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.0.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo-container">
+      <img src="https://sceniuz.com/static/media/Sceniuz_Logo.ba2730d7abcca86b0a864a7e876b1d36.svg" alt="Logo" />
+    
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="About.html">About Us</a>
+      <div class="dropdown">
+        <a href="#" id="dropbox">Services ▼</a>
+        <div class="dropdown-content" id="dropdownContent" style="display: none;">
+          <a href="Dataanalyst.html">Data Analytics</a>
+          <a href="DataEngineering.html">Data Engineering</a>
+          <a href="DataTransformation.html">Data transformation</a>
+        </div>
+      </div>
+      <a href="./Contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+    let x =document.getElementById("dropbox")
+    let dropdownContent =document.getElementById("dropdownContent")
+    x.addEventListener("mouseover",()=>{
+      dropdownContent.style.display = "block";
+    })
+    dropdownContent.addEventListener("mouseleave",()=>{
+      dropdownContent.style.display = "none";
+    })
+
+  </script>
+
+
+
+   <div class="aboutbox1">
+    <h3 class="abouthead" style="color: red;">To viosion</h3>
+    <p class="aboutpara">To revolutionize industries by transforming data into strategic assets that drive growth and innovation.</p>
+   </div>
+
+   <div class="aboutbox2">
+     
+  <div class="container">
+    <div class="slide active" id="slide1">
+      <img src="https://sceniuz.com/static/media/about-philosophy-image.c96467f94a5bf8982527217b6cb355a2.svg" alt="Nature">
+      <div class="text-content">
+        <h2 style="color: yellow ;font-weight: 500;">Our Philosophy</h2>
+        <p style="font-size: 2rem;">At Sceniuz, we leverage data to unlock new opportunities for growth and innovation.</p>
+        <br>
+        <span>~ Sceniuz</span>
+      </div>
+    </div>
+
+    <div class="slide" id="slide2">
+     
+      <div class="text-content">
+        <h2 style="  color: green;font-weight: 500;">Our Purpose</h2>
+        <p style="font-size: 2rem;">We strive to turn data complexity into strategic advantage, focusing on impactful results.</p>
+      </div>
+       <img src="https://sceniuz.com/static/media/about-our-purpose.82a2df8a8d93dfaf853f2bba10c2f01b.svg" alt="Tech">
+    </div>
+  </div>
+   </div>
+   <script>
+    setTimeout(() => {
+      document.getElementById('slide1').classList.remove('active');
+      document.getElementById('slide2').classList.add('active');
+    }, 2000); 
+    setTimeout(() => {
+      document.getElementById('slide2').classList.remove('active');
+      document.getElementById('slide1').classList.add('active');
+    }, 4000);
+  </script>
+
+  <div class="aboutbox3">
+     <div class="aboutbox3-1">
+    <h2>Our  Business Intelligence Process Explained</h2>
+    <p  style=" font-weight: 700;
+      font-size: 3.2rem;
+      text-align: center;
+      max-width: 1200px;
+      color: white; justify-self: center;padding-top: 1rem;">A step-by-step guide to our data driven  approach.</p>
+</div>
+     <div class="aboutbox3-2">
+    <div class="aboutbox3-3">
+      <img src="https://sceniuz.com/static/media/data-collection.340b5045ada7958f0b473eae96a79167.svg" alt="">
+      <h5 style="color: white; font-size: 1.2rem;padding-top:0.5rem ;">Data Collection</h5>
+      <p style="color: white;font-size: 0.8rem;">Gathering and integrating data from multiple sources.</p>
+    </div>
+    <div class="abutbox3-4">
+      <img src="https://sceniuz.com/static/media/data-processing.3ec472b3fb3cea5f2fe6c0f423bea5dc.svg" alt="">
+      <h5 style="color: white;font-size: 1.2rem;padding-top:0.5rem ">Data Processing</h5>
+      <p style="color: white;font-size: 0.8rem;">Refining data to extract meaningful insights.</p>
+    </div>
+    <div class="abutbox3-5">
+      <img src="https://sceniuz.com/static/media/insight-generation.19f08c44f7a2bed18442d67b933ec1cd.svg" alt="">
+      <h5 style="color: white;font-size: 1.2rem;padding-top:0.5rem ">Insight Generation</h5>
+      <p style="color: white;font-size: 0.8rem;">Translating data into actionable business intelligence.</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="aboutbox4">
+    <div class="aboutbox4-1">
+      <img src="https://sceniuz.com/static/media/our-process.32183fb835c07ad1de9defbe799ea537.svg" alt="">
+      <h3>Our Process Explained</h3>
+      <p>A step-by-step guide to our innovative approach.</p>
+    </div>
+     <div class="aboutbox4-2">
+      <div class="aboutbox4-3">
+        <div class="aboutbox4-3-1">
+        <h3>Consultation</h3>
+        <p style="padding:2 2 2 2;">We assess your data needs</p>
+        </div>
+        <br>
+        <div class="aboutbox4-3-2">
+        <h3>Implementation</h3>
+        <p>Deploy tailored solutions</p>
+        </div>
+      </div>
+      <div class="aboutbox4-4">
+        <div class="aboutbox4-4-1">
+        <h3>Optimization</h3>
+        <p>Enhance operational efficiency</p>
+        </div>
+        <br>
+        <div class="aboutbox4-4-2">
+        <h3>Support</h3>
+        <p> Continual improvement and aid</p>
+        </div>
+      </div>
+     </div>
+  </div>
+  <div class="aboutbox5">
+    <div class="aboutbox5-1">
+      <h1>Start Your Journey</h1>
+      <p>Expertise meets innovation.</p>
+      <a href="index.html"><button id="about5">Learn our Approach</button></a>
+    </div>
+    <div class="aboutbox5-2">
+      <div class="aboutbox5-2-1">
+        <img src="https://sceniuz.com/static/media/insight-icon.9fb8850ef34a02efefecf7dc9c94bc2c.svg" alt="">
+        <h5>Insightful Analytics</h5>
+        <p>Transform data into strategic assets with actionable insights.</p>
+      </div>
+      <div class="aboutbox5-2-2">
+        <img src="https://sceniuz.com/static/media/advance-engineering-icon.6804938f53aadf8f3a7927e814eb5646.svg" alt="">
+        <h5>Advanced Engineering</h5>
+        <p>Craft robust data infrastructures that scale with your business.</p>
+      </div>
+      <div class="aboutbox5-2-3">
+        <img src="https://sceniuz.com/static/media/digital-inovation-icon.ee8be45526cd692bbca6887b7c68e0c7.svg" alt="">
+        <h5>Digital Innovations</h5>
+        <p>Navigate digital complexities with ease and precision.</p>
+      </div>
+    </div>
+  </div>
+
+<div class="aboutbox6">
+  
+<div class="profilecontainer">
+  <h1>Data-Driven Future</h1>
+
+  <div class="profile-slide active">
+    <img src="https://sceniuz.com/static/media/Vishal.d4258e8d2f33083cd834a413942d3c2d.svg" alt="Mr. Vishal Dhure">
+    <div class="profiletext-content">
+      <h2>Mr. Vishal Dhure</h2>
+      <h3>CEO</h3>
+      <p>As CEO, he transforms bold ideas into impactful realities, driving sustainable growth and industry leadership.</p>
+    </div>
+  </div>
+
+  <div class="profile-slide">
+    <img src="https://sceniuz.com/static/media/Akshay.299b3189fbec5e917a93d3854eff10e6.svg" alt="Mr. Akshay Joshi">
+    <div class="profiltext-content">
+      <h2>Mr. Akshay Joshi</h2>
+      <h3>Delivery Sales Head</h3>
+      <p>Driving strategic delivery with data-driven insights, Mr. Akshay Joshi empowers business growth through innovation.</p>
+    </div>
+  </div>
+
+  <div class="profile-slide">
+    <img src="https://sceniuz.com/static/media/pratik.becbe5965e7db555a14d2b99ad5f8f30.svg" alt="Mr. Pratik Ghaware">
+    <div class="profiletext-content">
+      <h2>Mr. Pratik Ghaware</h2>
+      <h3>Data Analyst</h3>
+      <p>As a Data Analyst at Sceniuz, he transforms numbers into narratives that drive performance.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.profile-slide');
+  let currentSlide = 0;
+
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 3000);
+</script>
+
+</body>
+</html>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+ 
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+   
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+   
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+   
+  </section>
+  
+  <section class="">
+    <div class=" text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          
+            <img src="https://sceniuz.com/static/media/Sceniuz_Logo.ba2730d7abcca86b0a864a7e876b1d36.svg" alt="">
+         <div class="mapbox" style="height:10px;width:15px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d895.8497273798495!2d72.88018176954459!3d19.11063869888133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c99f13304e3b%3A0x5e4cc95214430cd!2sSceniuz%20-%20IT%20Division%20of%20Mahapatra%20Universal%20Limited!5e1!3m2!1sen!2sin!4v1748677341449!5m2!1sen!2sin" width="300" height="150" style="border:0; padding-top: 1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Services
+          </h6>
+          <p>
+            <a href="Dataanalyst.html" class="text-reset">Data Analytics</a>
+          </p>
+          <p>
+            <a href="DataEngineering.html" class="text-reset">Data Engineering</a>
+          </p>
+          <p>
+            <a href="DataTransformation.html" class="text-reset">Data Transformation</a>
+          </p>
+         
+        </div>
+       
+        <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4"> -->
+          <!-- Links -->
+          <!-- <h6 class="text-uppercase fw-bold mb-4">
+            
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div> -->
+       
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Mumbai, MH 400059, India</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            https://sceniuz.com/
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+       
+      </div>
+     
+    </div>
+  </section>
+ 
+ 
+ 
+</footer>
+
+  
+
+</body>
+</html>

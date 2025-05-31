@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.0.0/mdb.min.css"
+  rel="stylesheet"
+/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+
+       .navbar {
+        height: 8vh;
+        width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: medium;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      min-width: 150px;
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #000;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        right: 30px;
+        top: 70px;
+        width: 200px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      }
+      .logo-container img {
+      height: 30px;
+      margin-right: 10px;
+    }
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+.modelbody {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.modeltext {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Absolute position for all models */
+.model1, .model2, .model3, .model4 {
+  position: absolute;
+  transition: transform 1s ease;
+}
+
+.model1 { top: 30%; left: 30%; }
+.model2 { top: 30%; right: 30%; }
+.model3 { bottom: 20%; left: 30%; }
+.model4 { bottom: 20%; right: 30%; }
+
+.model1 img, .model2 img, .model3 img, .model4 img {
+  width: 450px;
+  height: 250px;
+}
+
+.model1.moved { transform: translate(-100%, -100%); }
+.model2.moved { transform: translate(100%, -100%); }
+.model3.moved { transform: translate(-100%, 100%); }
+.model4.moved { transform: translate(100%, 100%); }
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .model1, .model2, .model3, .model4 {
+    position: static;
+    margin: 10px auto;
+    text-align: center;
+    transform: none !important; /* cancel transform if user resized after scroll */
+  }
+
+  .modelbody {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .modeltext {
+    position: static;
+    transform: none;
+    font-size: 1.5rem;
+    opacity: 1; /* Always show text on mobile for UX */
+    margin-bottom: 20px;
+  }
+
+  .model1 img, .model2 img, .model3 img, .model4 img {
+    width: 100%;
+    height: auto;
+    max-width: 90%;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .modeltext {
+    font-size: 1.2rem;
+  }
+
+  .model1 img, .model2 img, .model3 img, .model4 img {
+    max-width: 100%;
+  }
+}
+
+.dataanalystbox1{
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+.dataanalystbox1 h1{
+  text-align: center;
+  font-size: 5rem;
+  color: 5rem;
+  color :red;
+ } 
+.dataanalystbox1 p{
+  text-align: center;
+
+  font-size: 3.5rem;
+  color:#000;
+width: 80%;
+  
+}
+
+    .dataanalystbox1 span{
+      color: red;
+    }
+    
+    .image-container {
+      position: absolute;
+      width: 450px;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+    }
+    
+    @media (max-width: 768px) {
+      .image-container {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-bottom: 20px;
+      }
+}
+
+.why-choose{  
+  background-color: #121012;
+}
+
+.transform-data {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.transform-data h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: left;
+  color: black;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #333;
+  padding: 30px 0;
+  flex-wrap: wrap;
+}
+
+.step-number {
+  font-size: 4rem;
+  font-weight: bold;
+  flex: 1;
+  text-align: center;
+}
+
+.step-content {
+  flex: 5;
+  padding-left: 20px;
+}
+
+.step-content h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-content p {
+  font-size: 1rem;
+  color: black;
+}
+
+/* Why Choose Sceniuz Section */
+.why-choose {
+  padding: 60px 20px;
+  background-color: #121012;
+  text-align: center;
+}
+
+.why-choose h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subheading {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  color: #ccc;
+}
+
+.stepcards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stepcard {
+  background-color: #014a41;
+  padding: 2rem;
+  flex: 1 1 250px;
+  max-width: 320px;
+  text-align: center;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.stepcard:hover {
+  transform: translateY(-10px);
+}
+
+.stepcard img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1);
+}
+.stepcard 
+
+.stepcard h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color:white;
+}
+
+.stepcard p {
+  font-size: 0.95rem;
+  color: #d1d5db;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .step-number {
+    text-align: left;
+    padding-bottom: 10px;
+  }
+
+  .stepcards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+.aboutbox4{
+    display: flex;
+    flex-direction: row;
+   
+    background-color: #adcae7;
+    align-items: center;
+   }
+   .aboutbox4-1{
+    width: 50%;
+    height: 60vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+   }
+   .aboutbox4-1 h3{
+    font-size: 3rem;
+    color: white;
+  
+    padding-top: 1rem;
+   }
+    .aboutbox4-1 p{
+      font-size: 1.5rem;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .aboutbox4-2{ 
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+.aboutbox4-3{  display: flex;
+ 
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  padding-left: 3rem;
+}
+.aboutbox4-3-1{
+  padding-right: 4rem;
+}
+.aboutbox4-4{
+  padding-left: 3rem;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+.aboutbox4-4-1{
+  padding-right: 4rem;
+}
+/* Base styles (as you provided) remain the same */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .aboutbox4 {
+    flex-direction: column;
+  }
+
+  .aboutbox4-1, .aboutbox4-2 {
+    width: 100%;
+  }
+
+  .aboutbox4-1 {
+    height: auto;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .aboutbox4-1 h3 {
+    font-size: 2.2rem;
+  }
+
+  .aboutbox4-1 p {
+    font-size: 1.2rem;
+  }
+
+  .aboutbox4-2 {
+    padding: 1rem 2rem;
+  }
+
+  .aboutbox4-3, .aboutbox4-4 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 0;
+  }
+
+  .aboutbox4-3-1, .aboutbox4-3-2,
+  .aboutbox4-4-1, .aboutbox4-4-2 {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutbox4-1 h3 {
+    font-size: 1.8rem;
+  }
+
+  .aboutbox4-1 p {
+    font-size: 1rem;
+  }
+
+  .aboutbox4-3, .aboutbox4-4 {
+    padding: 1rem 0;
+  }
+
+  .aboutbox4-2 {
+    padding: 1rem;
+  }
+
+  .aboutbox4-3-1, .aboutbox4-3-2,
+  .aboutbox4-4-1, .aboutbox4-4-2 {
+    padding: 0.5rem 0;
+  }
+}
+    </style>
+</head>
+<body>
+   <nav class="navbar">
+    <div class="logo-container">
+      <img src="https://sceniuz.com/static/media/Sceniuz_Logo.ba2730d7abcca86b0a864a7e876b1d36.svg" alt="Logo" />
+    
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="About.html">About Us</a>
+      <div class="dropdown">
+        <a href="#" id="dropbox">Services ▼</a>
+        <div class="dropdown-content" id="dropdownContent" style="display: none;">
+          <a href="Dataanalyst.html">Data Analytics</a>
+          <a href="DataEngineering.html">Data Engineering</a>
+          <a href="DataTransformation.html">Data transformation</a>
+        </div>
+      </div>
+      <a href="./Contact.html">Contact Us</a>
+    </div>
+  </nav>
+  
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+    let x =document.getElementById("dropbox")
+    let dropdownContent =document.getElementById("dropdownContent")
+    x.addEventListener("mouseover",()=>{
+      dropdownContent.style.display = "block";
+    })
+    dropdownContent.addEventListener("mouseleave",()=>{
+      dropdownContent.style.display = "none";
+    })
+
+  </script>
+
+
+
+
+<div class="dataanalystbox1">
+ <h1>Data Analytics Solution</h1>
+ <p>At <span style="color: red;">Sceniuz</span>, we specialize in providing cutting-edge data analytics solutions that empower businesses to unlock the full potential of their data. Our team of experienced data analysts and scientists leverages advanced analytics techniques and technologies to extract actionable insights and drive informed decision-making. With our comprehensive suite of data analytics services, we help businesses across industries harness the power of their data to gain a competitive edge.</p>
+
+</div>
+<div class="modelbody" id="modelContainer" style="background-color: rgb(45, 43, 43);">
+  <div class="modeltext" id="modelText">
+    <h3 style="color: white;">Why Choose Sceniuz</h3>
+    <p style="color : white;">
+      Sceniuz is a leading provider of data analytics solutions, offering a comprehensive suite of services to help businesses harness the power of their data...
+    </p> 
+  </div>
+  <div class="model1 image-container">
+    <img src="https://veracitiz.com/blog/wp-content/uploads/2024/03/what-is-data-preparation.webp" alt="">
+  </div>
+  <div class="model2 image-container">
+    <img src="https://assets.everspringpartners.com/ca/3b/d9e41e954f32a1a103cfbdd7efee/business-analytics.jpg" alt="">
+  </div>
+  <div class="model3 image-container">
+    <img src="https://media.licdn.com/dms/image/v2/D5612AQHtR-W9OZTUPg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1715949007870?e=2147483647&v=beta&t=tW7AB1FEXZ9RS_HN8tAJvDoLeze_HOFuaBQvaIZNIHU" alt="">
+  </div>
+  <div class="model4 image-container">
+    <img src="https://www.ovaledge.com/hubfs/V2-1.png" alt="">
+  </div>
+</div>
+
+
+
+
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  let triggered = false;
+
+  window.addEventListener('scroll', () => {
+    if (!triggered && window.scrollY > 50) {
+      document.querySelector('.model1').classList.add('moved');
+      document.querySelector('.model2').classList.add('moved');
+      document.querySelector('.model3').classList.add('moved');
+      document.querySelector('.model4').classList.add('moved');
+
+      setTimeout(() => {
+        document.getElementById('modelText').style.opacity = 1;
+      }, 1000);
+
+      triggered = true;
+    }
+  });
+});
+</script>
+
+
+
+
+<!-- How We Transform Data Section -->
+<section class="transform-data">
+  <h2>How We Transform Data</h2>
+  <div class="step">
+    <div class="step-number">1</div>
+    <div class="step-content">
+      <h4>Data Collection</h4>
+      <p>Gathering raw data with precision to ensure quality and relevance.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-number">2</div>
+    <div class="step-content">
+      <h4>Data Analysis</h4>
+      <p>Employing advanced tools to extract meaningful insights from data.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-number">3</div>
+    <div class="step-content">
+      <h4>Actionable Reports</h4>
+      <p>Delivering clear, actionable reports that inform strategic decisions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Sceniuz Section -->
+<section class="why-choose">
+  <h2 style="color: #f8f9fa;">Why Choose Sceniuz</h2>
+  <p class="subheading">Leading-edge solutions tailored for your data needs.</p>
+  <div class="stepcards">
+    <div class="stepcard">
+      <img src="https://sceniuz.com/static/media/customer-analytics-icon.ff25973baaa9a8971888521dd2a3c61a.svg" alt="icon" />
+      <h4>Custom Analytics</h4>
+      <p>Tailored solutions that fit your unique business requirements.</p>
+    </div>
+    <div class="stepcard">
+      <img src="https://sceniuz.com/static/media/customer-analytics-icon.ff25973baaa9a8971888521dd2a3c61a.svg" alt="icon" />
+      <h4>Predictive Insights</h4>
+      <p>Forecast trends and behaviors with our predictive analysis models.</p>
+    </div>
+    <div class="stepcard">
+      <img src="https://sceniuz.com/static/media/customer-analytics-icon.ff25973baaa9a8971888521dd2a3c61a.svg" alt="icon" />
+      <h4>Scalable Systems</h4>
+      <p>Grow your analytical capabilities as your business expands.</p>
+    </div>
+  </div>
+</section>
+
+
+ <div class="aboutbox4">
+    <div class="aboutbox4-1">
+      <img src="https://sceniuz.com/static/media/our-process.32183fb835c07ad1de9defbe799ea537.svg" alt="">
+      <h3>Our Data Analytics Solution</h3>
+      
+    </div>
+     <div class="aboutbox4-2">
+      <div class="aboutbox4-3">
+        <div class="aboutbox4-3-1">
+        <h3>Advanced Data Analytics</h3>
+        <p style="padding:2 2 2 2;">Unlock insights with advanced analytics – predictive modeling, machine learning, and data mining. Our tools reveal patterns for informed decisions.</p>
+        </div>
+        <br>
+        <div class="aboutbox4-3-2">
+        <h3>Interactive Dashboards and Vissualization</h3>
+        <p>Transform data with interactive dashboards. We use Microsoft Power BI and Qlik for intuitive visuals, revealing trends and insights.</p>
+        </div>
+      </div>
+      <div class="aboutbox4-4">
+        <div class="aboutbox4-4-1">
+        <h3>Data Warehouse and integration</h3>
+        <p>Build robust data warehouses for centralized storage and seamless integration. We use Microsoft Azure for scalable, secure solutions.</p>
+        </div>
+        <br>
+        <div class="aboutbox4-4-2">
+        <h3>Microsoft and Qlik Partners</h3>
+        <p>Microsoft and Qlik Partners. Deep expertise, latest tech, and dedicated support for exceptional data analytics solutions.</p>
+        </div>
+      </div>
+     </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+ 
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+   
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+   
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+   
+  </section>
+  
+  <section class="">
+    <div class=" text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          
+            <img src="https://sceniuz.com/static/media/Sceniuz_Logo.ba2730d7abcca86b0a864a7e876b1d36.svg" alt="">
+         <div class="mapbox" style="height:10px;width:15px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d895.8497273798495!2d72.88018176954459!3d19.11063869888133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c99f13304e3b%3A0x5e4cc95214430cd!2sSceniuz%20-%20IT%20Division%20of%20Mahapatra%20Universal%20Limited!5e1!3m2!1sen!2sin!4v1748677341449!5m2!1sen!2sin" width="300" height="150" style="border:0; padding-top: 1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Services
+          </h6>
+          <p>
+            <a href="Dataanalyst.html" class="text-reset">Data Analytics</a>
+          </p>
+          <p>
+            <a href="DataEngineering.html" class="text-reset">Data Engineering</a>
+          </p>
+          <p>
+            <a href="DataTransformation.html" class="text-reset">Data Transformation</a>
+          </p>
+         
+        </div>
+       
+        <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4"> -->
+          <!-- Links -->
+          <!-- <h6 class="text-uppercase fw-bold mb-4">
+            
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div> -->
+       
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Mumbai, MH 400059, India</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            https://sceniuz.com/
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+       
+      </div>
+     
+    </div>
+  </section>
+ 
+ 
+ 
+</footer>
+
+  
+  
+  
+  
+  </body>
+</html>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.0.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="index.css">
+  
+  </head>
+  <body>
+     <nav class="navbar">
+    <div class="logo-container">
+      <img src="https://sceniuz.com/static/media/Sceniuz_Logo.ba2730d7abcca86b0a864a7e876b1d36.svg" alt="Logo" />
+    
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="About.html">About Us</a>
+      <div class="dropdown">
+        <a href="#" id="dropbox">Services ▼</a>
+        <div class="dropdown-content" id="dropdownContent" style="display: none;">
+          <a href="Dataanalyst.html">Data Analytics</a>
+          <a href="DataEngineering.html">Data Engineering</a>
+          <a href="DataTransformation.html">Data transformation</a>
+        </div>
+      </div>
+      <a href="./Contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+    let x =document.getElementById("dropbox")
+    let dropdownContent =document.getElementById("dropdownContent")
+    x.addEventListener("mouseover",()=>{
+      dropdownContent.style.display = "block";
+    })
+    dropdownContent.addEventListener("mouseleave",()=>{
+      dropdownContent.style.display = "none";
+    })
+
+  </script>
+
+    <div class="box1">
+      <div class="leftBox1">
+        <h1>Data-Driven Decisions</h1>
+        <h4>unlesh your data power</h4>
+        <button>Discover More</button>
+      </div>
+      <div class="rightBox1">
+        <div class="box1row">
+          <div class="box">
+            <img
+              src="https://sceniuz.com/static/media/Datadriven-left-2.3fce0762c03b51ff50763d8986167753.svg"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://sceniuz.com/static/media/datadriven-left-1.b9ff8affd8e7a311e326d84a85a7cd38.svg"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://sceniuz.com/static/media/Datadriven-left-3.e6292596733e75c533cfdee6860d704b.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="box2row">
+          <div class="box">
+            <img
+              src="https://sceniuz.com/static/media/Datadriven-right-1.0a889d8ba361b6e0a245ec6cede575a0.svg"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://sceniuz.com/static/media/Datadriven_right-2.e16ff7616ea96ae64a3cb1b8889e087f.svg"
+              alt=""
+            />
+          </div>
+          <div class="box">
+            <img
+              src="https://sceniuz.com/static/media/Datadriven-right-3.b7f17334d62d06f1ff1493c949cb66d5.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<div class="modelbody" id="modelContainer">
+  <div class="modeltext" id="modelText">
+    <h3>Why Choose Sceniuz</h3>
+    <p>
+      Sceniuz is a leading provider of data analytics solutions, offering a comprehensive suite of services to help businesses harness the power of their data...
+    </p> 
+  </div>
+  <div class="model1 image-container">
+    <img src="https://veracitiz.com/blog/wp-content/uploads/2024/03/what-is-data-preparation.webp" alt="">
+  </div>
+  <div class="model2 image-container">
+    <img src="https://assets.everspringpartners.com/ca/3b/d9e41e954f32a1a103cfbdd7efee/business-analytics.jpg" alt="">
+  </div>
+  <div class="model3 image-container">
+    <img src="https://media.licdn.com/dms/image/v2/D5612AQHtR-W9OZTUPg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1715949007870?e=2147483647&v=beta&t=tW7AB1FEXZ9RS_HN8tAJvDoLeze_HOFuaBQvaIZNIHU" alt="">
+  </div>
+  <div class="model4 image-container">
+    <img src="https://www.ovaledge.com/hubfs/V2-1.png" alt="">
+  </div>
+</div>
+
+
+
+
+
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  let triggered = false;
+
+  window.addEventListener('scroll', () => {
+    if (!triggered && window.scrollY > 50) {
+      document.querySelector('.model1').classList.add('moved');
+      document.querySelector('.model2').classList.add('moved');
+      document.querySelector('.model3').classList.add('moved');
+      document.querySelector('.model4').classList.add('moved');
+
+      setTimeout(() => {
+        document.getElementById('modelText').style.opacity = 1;
+      }, 2000);
+
+      triggered = true;
+    }
+  });
+});
+</script>
+    <div class="image-container" id="banner">
+    <div class="text-overlay">
+      <h1>Leading the Data Revolution.</h1>
+      <p>Innovation through analytics.</p>
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      'https://t4.ftcdn.net/jpg/07/07/02/79/360_F_707027965_o1Nawl8IUYvBowX2BWbJBO8lAyHtkuIa.jpg',
+      'https://www.alation.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2F7p3vnbbznfiw%2F1foHY6aqxhYZ1opi4BNyTo%2Fe1dd892bb573aad2dc325e73e9141491%2F5-Ways-to-Use-Data-to-Boost-Customer-Experience-Landing-Page-1710x495-1.png&w=1200&q=75',
+      'https://thumbs.dreamstime.com/b/big-data-science-analysis-business-technology-concept-virtual-screen-big-data-science-analysis-business-technology-concept-145015243.jpg?w=1400',
+      'https://media.licdn.com/dms/image/v2/D4D3DAQHL-ve1ps0d4g/image-scale_191_1128/image-scale_191_1128/0/1691147249690/sceniuz_cover?e=2147483647&v=beta&t=rWeKDCrGFIAH2gF7lNLRPG-YfbjCr1EJRlFVaaOQ8H8'
+    ];
+
+    let index = 0;
+    const banner = document.getElementById('banner');
+
+    function changeBackground() {
+      banner.style.backgroundImage = `url('${images[index]}')`;
+      index = (index + 1) % images.length;
+    }
+    changeBackground();
+
+  
+    setInterval(changeBackground, 2000);
+  </script>
+
+    <div class="box4">
+      <div class="box5">
+        <img
+          src="https://sceniuz.com/static/media/thirdcompoImg.0ceaefdc1732939725418544ec95ff81.svg"
+          alt=""
+        />
+      </div>
+      <div class="box6">
+        <h1>Our Process Explained</h1>
+        <p>strategic steps to insights</p>
+        <button>Start Your Journey</button>
+      </div>
+    </div>
+
+    <div class="box7">
+      <div class="box7-1">
+        <img
+          src="https://sceniuz.com/static/media/Processimg-1.ec8e44c10193cae4aff8034c07413dc7.svg"
+          alt=""
+        />
+        <p
+          style="
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+          "
+        >
+          Data Integration
+        </p>
+        <p
+          style="
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 25px;
+          "
+        >
+          Seamlessly merging of bussiness data
+        </p>
+      </div>
+      <div class="box7-2">
+        <img
+          src="https://sceniuz.com/static/media/Processimg-2.eb373d8a22166fbd0b8e93962d6f1d6a.svg"
+          alt=""
+        />
+        <p
+          style="
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+          "
+        >
+          Data Integration
+        </p>
+        <p
+          style="
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 25px;
+          "
+        >
+          Seamlessly merging of bussiness data
+        </p>
+      </div>
+      <div class="box7-3">
+        <img
+          src="https://sceniuz.com/static/media/Processimg-3.c67e4b3443228e60d8a9dbeffc8d7be8.svg"
+          alt=""
+        />
+        <p
+          style="
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+          "
+        >
+          Data Integration
+        </p>
+        <p
+          style="
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 25px;
+          "
+        >
+          Seamlessmerging of bussiness data
+        </p>
+      </div>
+    </div>
+
+    <div class="box8">
+      <div class="box8-1">
+        <h1 style="color: #f8f9fa;">Our Advantage</h1>
+        <p style="color: #f8f9fa;"> Why choose Sceniuz</p>
+      </div>
+      <div class="box8-2">
+        <img
+          src="https://sceniuz.com/static/media/Adantageimg.ca00955aee999a69f2af280e22dedbe5.svg"
+          alt=""
+        />
+      </div>
+      <div class="box8-3">
+        <div class="box8-3-1">
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 25px;color: #f8f9fa;
+            "
+          >
+            Analytics Pioneers
+          </p>
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 25px; color: #f8f9fa;
+            "
+          >
+            Decipher complex data with our advanced analytics solutions.
+          </p>
+        </div>
+        <div class="box8-3-2">
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 25px; color: #f8f9fa;
+            "
+          >
+            Engineering Excellence
+          </p>
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 25px;color: #f8f9fa;
+            "
+          >
+            Build robust data frameworks with our engineering expertise.
+          </p>
+        </div>
+        <div class="box8-3-3">
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 25px;color: #f8f9fa;
+            "
+          >
+            Transformation Experts
+          </p>
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 25px;color: #f8f9fa;
+            "
+          >
+            Navigate your digital journey with our tailored strategies.
+          </p>
+        </div>
+      </div>
+      <div class="box8-4">
+        <div class="box8-4-1">
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 25px;color: #f8f9fa;
+            "
+          >
+            Innovative Strategies
+          </p>
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 25px;color: #f8f9fa;
+            "
+          >
+            Stay ahead with our cutting-edge digital transformation approaches.
+          </p>
+        </div>
+        <div class="box8-4-2">
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 25px;color: #f8f9fa;
+            "
+          >
+            Collaborative Approach
+          </p>
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 25px;color: #f8f9fa;
+            "
+          >
+            Our team works with you to unlock data's full potential.
+          </p>
+        </div>
+        <div class="box8-4-3">
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 25px;color: #f8f9fa;
+            "
+          >
+            Actionable Insights
+          </p>
+          <p
+            style="
+              font-family: Inter;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 25px;color: #f8f9fa;
+            "
+          >
+            Drive business growth with data-driven decisions.
+          </p>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="image-sevice-container ">
+      <div class="box9">
+        <h1 style="color: #f8f9fa;">Our Service Spectrum</h1>
+        <h4  style="color: #f8f9fa;">Expertise across domains </h4>
+        </div>
+        <div class="box9-1">
+          <div class="card" style="width: 30rem;">
+  <img src="https://sceniuz.com/static/media/Spectrum1.6abcc434fe94ee2f348299772927fd57.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5> Analytics Insights</h5>
+    <p class="card-text">Data-driven decisions to steer your company forword.</p>
+  </div>
+</div>
+      <div class="card" style="width: 30rem;">
+  <img src="https://sceniuz.com/static/media/Spectrum2.cb6cda74feba039402b74f472593d167.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5> Engineering Excellence</h5>
+    <p class="card-text">Building robust data infrastructures for scale and security.</p>
+  </div>
+</div>
+<div class="card" style="width: 30rem;">
+  <img src="https://sceniuz.com/static/media/Spectrum3.170b60163e8b3e553ef105984f712ebe.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5> Transformation Journey</h5>
+    <p class="card-text">Navigate the digital landscape with our tailored solutions.</p>
+  </div>
+</div>
+
+    </div>
+    <div class="box9-2">
+      <div class="card" style="width: 30rem;">
+  <img src="https://sceniuz.com/static/media/Spectrum4.017f610df45dd630a8e4c0277168b2f0.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5>Strategic Advisory</h5>
+    <p class="card-text">Align your data goals with business outcomes effectively.</p>
+  </div>
+  </div>
+    <div class="card" style="width: 30rem;">
+  <img src="https://sceniuz.com/static/media/Spectrum5.40e483535d7ab943358e577e0a6c87e0.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5>Custom Solution</h5>
+    <p class="card-text">Bespoke analytics and engineering for unique challenges.</p>
+  </div>
+</div><div class="card" style="width: 30rem;">
+  <img src="https://sceniuz.com/static/media/Spectrum6.2ab53dcd92ec8a856231f26da4a8bb82.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5>Tech Integration</h5>
+    <p class="card-text"> Seamless incoporation of the latest in data technology.</p>
+  </div>
+</div>
+</div>
+<div class="box9-3">
+  <div class="card" style="width: 30rem;">
+  <img src="https://sceniuz.com/static/media/Spectrum7.95629be78d67e17332c950d6310ae11e.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5>compiance Assurance</h5>
+    <p class="card-text">Adhering to regulations while maximizing data utility.</p>
+  </div></div>
+<div class="card" style="width: 30rem;">
+  <img src="https://sceniuz.com/static/media/Spectrum8.f6ca1a138cb980af549b9a9d402aa6cd.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+     <h5>Cloud Services</h5>
+    <p class="card-text">Leverage the cloud for flexible ,scalable data solutions.</p>
+  </div>
+</div><div class="card" style="width: 30rem;">
+  <img src="https://sceniuz.com/static/media/Spectrum9.3c85aecbf20c0803905d93c6be310799.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+  <h5>Insightful Reporting</h5>
+    <p class="card-text">Actionable reports to inform and guide your business strategy.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- How We Transform Data Section -->
+<section class="transform-data">
+  <h2>How We Transform Data</h2>
+  <div class="step">
+    <div class="step-number">1</div>
+    <div class="step-content">
+      <h4>Data Collection</h4>
+      <p>Gathering raw data with precision to ensure quality and relevance.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-number">2</div>
+    <div class="step-content">
+      <h4>Data Analysis</h4>
+      <p>Employing advanced tools to extract meaningful insights from data.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-number">3</div>
+    <div class="step-content">
+      <h4>Actionable Reports</h4>
+      <p>Delivering clear, actionable reports that inform strategic decisions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Sceniuz Section -->
+<section class="why-choose">
+  <h2 style="color: #f8f9fa;">Why Choose Sceniuz</h2>
+  <p class="subheading">Leading-edge solutions tailored for your data needs.</p>
+  <div class="stepcards">
+    <div class="stepcard">
+      <img src="https://sceniuz.com/static/media/customer-analytics-icon.ff25973baaa9a8971888521dd2a3c61a.svg" alt="icon" />
+      <h4>Custom Analytics</h4>
+      <p>Tailored solutions that fit your unique business requirements.</p>
+    </div>
+    <div class="stepcard">
+      <img src="https://sceniuz.com/static/media/customer-analytics-icon.ff25973baaa9a8971888521dd2a3c61a.svg" alt="icon" />
+      <h4>Predictive Insights</h4>
+      <p>Forecast trends and behaviors with our predictive analysis models.</p>
+    </div>
+    <div class="stepcard">
+      <img src="https://sceniuz.com/static/media/customer-analytics-icon.ff25973baaa9a8971888521dd2a3c61a.svg" alt="icon" />
+      <h4>Scalable Systems</h4>
+      <p>Grow your analytical capabilities as your business expands.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+ 
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+   
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+   
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+   
+  </section>
+  
+  <section class="">
+    <div class=" text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          
+            <img src="https://sceniuz.com/static/media/Sceniuz_Logo.ba2730d7abcca86b0a864a7e876b1d36.svg" alt="">
+         <div class="mapbox" style="height:10px;width:15px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d895.8497273798495!2d72.88018176954459!3d19.11063869888133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c99f13304e3b%3A0x5e4cc95214430cd!2sSceniuz%20-%20IT%20Division%20of%20Mahapatra%20Universal%20Limited!5e1!3m2!1sen!2sin!4v1748677341449!5m2!1sen!2sin" width="300" height="150" style="border:0; padding-top: 1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Services
+          </h6>
+          <p>
+            <a href="Dataanalyst.html" class="text-reset">Data Analytics</a>
+          </p>
+          <p>
+            <a href="DataEngineering.html" class="text-reset">Data Engineering</a>
+          </p>
+          <p>
+            <a href="DataTransformation.html" class="text-reset">Data Transformation</a>
+          </p>
+         
+        </div>
+       
+        <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4"> -->
+          <!-- Links -->
+          <!-- <h6 class="text-uppercase fw-bold mb-4">
+            
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div> -->
+       
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Mumbai, MH 400059, India</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            https://sceniuz.com/
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+       
+      </div>
+     
+    </div>
+  </section>
+ 
+ 
+ 
+</footer>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </body>
+</html>
