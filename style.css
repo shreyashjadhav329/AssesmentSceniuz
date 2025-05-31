@@ -101,12 +101,13 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        height: 80vh;
+        height: auto;
         background-color: #f8f9fa;
 
-        
+       
       }
       .leftBox1 {
+        flex: 1 1 50%;
         width: 50%;
         padding: 20px;
         display: flex;
@@ -135,7 +136,8 @@
       button:hover {
         background-color: #333a41;
       }
-      .rightbox1 {
+      .rightbox1 { 
+        flex: 1 1 50%;
         width: 50%;
         display: flex;
         flex-direction: column;
