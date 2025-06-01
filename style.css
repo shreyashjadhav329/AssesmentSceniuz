@@ -1206,10 +1206,16 @@ font-size: 24px;
 }
 
 .modelbody {
+ background-image: url('ChatGPT\ Image\ Jun\ 1\,\ 2025\,\ 03_43_40\ PM.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   position: relative;
   width: 100%;
   height: 100vh;
-  background-color: #f0f0f0;
+ 
   overflow: hidden;
 }
 
@@ -1219,7 +1225,7 @@ font-size: 24px;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #333;
+  color:white;
   font-size: 2rem;
   opacity: 0;
   transition: opacity 1s ease;
