@@ -124,6 +124,7 @@
         font-size: 2.5rem;
         margin-bottom: 20px;
       }
+
       button {
         padding: 10px 20px;
         font-size: 1.2rem;
@@ -135,6 +136,12 @@
       }
       button:hover {
         background-color: #333a41;
+      }
+      .rightBox1{ flex: 1 1 50%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
        .slider-container {
       overflow: hidden;
@@ -512,6 +519,7 @@
       }
       @media (max-width: 1200px) {
         .box1 {
+          display: block;
           display: flex;
           flex-direction: column;
           height: auto;
